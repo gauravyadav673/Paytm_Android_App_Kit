@@ -30,6 +30,7 @@ public class MerchantActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.merchantapp);
 		initOrderId();
+		//to close the keyboard on starting if it opens up
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 	}
 	
@@ -44,6 +45,7 @@ public class MerchantActivity extends Activity {
 
 	private void initOrderId() {
 		Random r = new Random(System.currentTimeMillis());
+		//initialising with a random number
 		String orderId = "ORDER" + (1 + r.nextInt(2)) * 10000
 				+ r.nextInt(10000);
 		EditText orderIdEditText = (EditText) findViewById(R.id.order_id);
